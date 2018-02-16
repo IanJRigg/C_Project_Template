@@ -1,5 +1,5 @@
 all:
-	$(CC) main.c -o main
+	$(CC) main.c -o scan -Wall -Wextra -Wpedantic
 
 clean:
-	$(RM) main
+	$(RM) scan

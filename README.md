@@ -1,12 +1,17 @@
 # C Port Scanner
 The following repository contains a simple TCP/UDP port scanner written with C.
 
-### Scan Open UDP Ports
-```bash
-scan -u
+### Scan Open TCP and UDP Ports
+```
+scan
 ```
 
-### Scan Open TCP Ports
+### Scan Only Open TCP Ports
 ```bash
 scan -t
+```
+
+### Scan Only Open UDP Ports
+```bash
+scan -u
 ```
