@@ -10,8 +10,4 @@
 #define CYAN     "\x1B[96m"
 #define WHITE    "\x1B[97m"
 
-
-#define NUMBER_OF_THREADS 4
-
-
 #endif

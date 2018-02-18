@@ -1,8 +1,11 @@
+# Application name
+APP := main
+
 # Directory Locations
 SRC_DIR := src
 OBJ_DIR := obj
 
-# Files Lists
+# File Lists
 C_FILES   := $(wildcard $(SRC_DIR)/*.c)
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(C_FILES))
 
@@ -11,18 +14,16 @@ LD_FLAGS  := $(LDFLAGS)
 CPPFLAGS  := $(CPPFLAGS)
 CFLAGS    := $(CFLAGS) -Wall -Wextra -Wpedantic
 
-all: $(OBJ_DIR) scan
+all: $(OBJ_DIR) $(APP)
 
-scan: $(OBJ_FILES)
-	$(info $(OBJ_FILES))
-	$(info $(C_FILES))
+$(APP): $(OBJ_FILES)
 	$(CC) $(LDFLAGS) -o $@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
 
 clean:
-	$(RM) scan
+	$(RM) $(APP)
 	$(RM) -rf $(OBJ_DIR)
 
 
