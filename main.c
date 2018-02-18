@@ -4,14 +4,19 @@
 
 #include "configuration.h"
 
+void print_help_options()
+{
+    printf(" -u : Search UDP Ports\n"
+           " -t : Search TCP Ports\n"
+           " -h : Print this message\n");
+}
+
+
 int main(int argc, char** argv)
 {
-    if(argc == 1L)
+    if(argc == 2L)
     {
-        // Search all of the ports
-    }
-    else if(argc >= 2L)
-    {
+        // TODO: Make this take in options such as an IP address
         int option = 0L;
         while((option = getopt(argc, argv, "uth")) != -1L)
         {
@@ -26,23 +31,19 @@ int main(int argc, char** argv)
                     break;
 
                 case 'h':
-                    // print help screen
-                    printf("Helpful things\n");
+                    // TODO: Make this only happen when nothing else is present
+                    print_help_options();
                     break;
 
                 default:
+                    print_help_options();
                     break;
             }
         }
-        // Demux the arguments
-            // -u triggers UDP search
-            // -t triggers TCP search
-            // -h prints out this statement
-            // Anything else triggers a failure
     }
     else
     {
-        fprintf(stderr, RED "Invalid number of arguments\n" NORMAL);
+        print_help_options();
         exit(EXIT_FAILURE);
     }
 
