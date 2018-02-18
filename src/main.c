@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #include "configuration.h"
+#include "networking.h"
 
 void print_help_options()
 {

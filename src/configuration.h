@@ -1,4 +1,5 @@
-
+#ifndef CONFIGURATION_H
+#define CONFIGURATION_H
 
 #define NORMAL   "\x1B[0m"
 #define RED      "\x1B[91m"
@@ -11,3 +12,6 @@
 
 
 #define NUMBER_OF_THREADS 4
+
+
+#endif
